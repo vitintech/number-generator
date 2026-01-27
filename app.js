@@ -5,14 +5,18 @@ function sortear() {
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);
 
-    alert(`Quantidade: ${quantidade}`);
-    alert(`de: ${de}`);
-    alert(`ate: ${ate}`);
+    console.log(`Quantidade: ${quantidade}`);
+    console.log(`de: ${de}`);
+    console.log(`ate: ${ate}`);
 
-    while (qtde_numeros_sorteados < quantidade) {
+    while (qtde_numeros_sorteados != quantidade) {
       let num_sorteados = parseInt(Math.random() * ate) + de;
-      alert(`Número sorteado: ${num_sorteados}`);
+      console.log(`Número sorteado: ${num_sorteados}`);
 
       qtde_numeros_sorteados++;
     }
+}
+
+function reiniciar() {
+    document.getElementById("reiniciar").removeAttribute("disabled");
 }

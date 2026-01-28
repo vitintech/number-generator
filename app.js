@@ -1,4 +1,5 @@
 let lista_nuSorteados = [];
+let i;
 
 function sortear() {
     let quantidade = parseInt(document.getElementById("quantidade").value);
@@ -9,19 +10,16 @@ function sortear() {
     console.log(`de: ${de}`);
     console.log(`ate: ${ate}`);
 
-    for (i = 0; i < quantidade; i++) {
-    lista_nuSorteados = gerarNumeroAleatorio(de, ate);
-    let numero = lista_nuSorteados;
+    for (i = 1; i <= quantidade; i++) {
+    let numero = gerarNumeroAleatorio(de, ate);
 
-    if (lista_nuSorteados.includes(numero)) {
-        return gerarNumeroAleatorio(de, ate);
-    } else {
-        lista_nuSorteados.push(numero);
+    while (lista_nuSorteados.includes(numero)) {
+        numero = gerarNumeroAleatorio(de, ate);
     }
-    console.log(`${lista_nuSorteados}`);
+    lista_nuSorteados.push(numero);
   }
 }
 
 function gerarNumeroAleatorio(min, max) {
-    return parseInt(Math.random() * max) + min;
+    return parseInt(Math.floor(Math.random() * (max - min + 1)) + min);
 }

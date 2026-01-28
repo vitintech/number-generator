@@ -18,6 +18,8 @@ function sortear() {
     }
     lista_nuSorteados.push(numero);
   }
+  let resultado = document.getElementById("resultado");
+  resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${lista_nuSorteados}</label>`;
 }
 
 function gerarNumeroAleatorio(min, max) {

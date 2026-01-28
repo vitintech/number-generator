@@ -25,3 +25,8 @@ function sortear() {
 function gerarNumeroAleatorio(min, max) {
     return parseInt(Math.floor(Math.random() * (max - min + 1)) + min);
 }
+
+function reiniciar() {
+    lista_nuSorteados = [];
+    document.getElementById("resultado").innerHTML = "<label class=\"texto__paragrafo\">Números sorteados:  </label>";
+}

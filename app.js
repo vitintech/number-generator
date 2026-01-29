@@ -31,18 +31,22 @@ function gerarNumeroAleatorio(min, max) {
 // Função para mudar o status do botão reiniciar
 function statusBotao() {
     let botao = document.getElementById("btn-reiniciar");
-    
-    if (botao.classList.contains("container_botao--desativado")) {
-        botao.classList.remove("container_botao--desativado");
-        botao.classList.add("container_botao--ativado");
+
+    if (botao.classList.contains("container__botao-desabilitado")) {
+        botao.classList.remove("container__botao-desabilitado");
+        botao.classList.add("container__botao");
     } else {
-        botao.classList.remove("container_botao--ativado");
-        botao.classList.add("container_botao--desativado");
+        botao.classList.remove("container__botao");
+        botao.classList.add("container__botao-desabilitado");
     }
 }
 
 // Função que da ação ao botão reiniciar
 function reiniciar() {
     lista_nuSorteados = [];
+    document.getElementById("quantidade").value = "";
+    document.getElementById("de").value = "";
+    document.getElementById("ate").value = "";
     document.getElementById("resultado").innerHTML = "<label class=\"texto__paragrafo\">Números sorteados:  </label>";
+    statusBotao();
 }

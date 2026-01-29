@@ -29,7 +29,17 @@ function gerarNumeroAleatorio(min, max) {
 }
 
 // Função para mudar o status do botão reiniciar
-
+function statusBotao() {
+    let botao = document.getElementById("btn-reiniciar");
+    
+    if (botao.classList.contains("container_botao--desativado")) {
+        botao.classList.remove("container_botao--desativado");
+        botao.classList.add("container_botao--ativado");
+    } else {
+        botao.classList.remove("container_botao--ativado");
+        botao.classList.add("container_botao--desativado");
+    }
+}
 
 // Função que da ação ao botão reiniciar
 function reiniciar() {

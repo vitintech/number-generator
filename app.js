@@ -5,6 +5,11 @@ function sortear() {
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);
 
+    if (de > ate) {
+        alert("O valor (do) nao pode ser maior que o valor (ate).");
+        return;
+    }
+
     console.log(`Quantidade: ${quantidade}`);
     console.log(`de: ${de}`);
     console.log(`ate: ${ate}`);

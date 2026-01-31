@@ -1,8 +1,7 @@
-let lista_nuSorteados = [];
-let i;
-
 // função para informações, testes, e exibir os numeros sorteados
 function sortear() {
+    lista_nuSorteados = []; // para resetar a lista a cada sorteio
+
     let quantidade = parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);
@@ -11,7 +10,7 @@ function sortear() {
     console.log(`de: ${de}`);
     console.log(`ate: ${ate}`);
 
-    for (i = 1; i <= quantidade; i++) {
+    for (let i = 1; i <= quantidade; i++) {
     let numero = gerarNumeroAleatorio(de, ate);
 
     while (lista_nuSorteados.includes(numero)) {
@@ -25,7 +24,7 @@ function sortear() {
 
 // Função para chamar e gerar o numero
 function gerarNumeroAleatorio(min, max) {
-    return parseInt(Math.floor(Math.random() * (max - min + 1)) + min);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Função para mudar o status do botão reiniciar
@@ -40,13 +39,13 @@ function statusBotao() {
         botao.classList.add("container__botao-desabilitado");
     }
 }
+statusBotao();
 
 // Função que da ação ao botão reiniciar
 function reiniciar() {
-    lista_nuSorteados = [];
+    statusBotao();
     document.getElementById("quantidade").value = "";
     document.getElementById("de").value = "";
     document.getElementById("ate").value = "";
     document.getElementById("resultado").innerHTML = "<label class=\"texto__paragrafo\">Números sorteados:  </label>";
-    statusBotao();
 }

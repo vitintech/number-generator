@@ -1,7 +1,6 @@
 // função para informações, testes, e exibir os numeros sorteados
 function sortear() {
-    lista_nuSorteados = []; // para resetar a lista a cada sorteio
-
+    lista_nuSorteados = [];
     let quantidade = parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);
@@ -20,6 +19,8 @@ function sortear() {
   }
   let resultado = document.getElementById("resultado");
   resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${lista_nuSorteados}</label>`;
+
+  statusBotao();
 }
 
 // Função para chamar e gerar o numero
@@ -39,13 +40,13 @@ function statusBotao() {
         botao.classList.add("container__botao-desabilitado");
     }
 }
-statusBotao();
 
 // Função que da ação ao botão reiniciar
 function reiniciar() {
-    statusBotao();
+    lista_nuSorteados = [];
     document.getElementById("quantidade").value = "";
     document.getElementById("de").value = "";
     document.getElementById("ate").value = "";
     document.getElementById("resultado").innerHTML = "<label class=\"texto__paragrafo\">Números sorteados:  </label>";
+    statusBotao();
 }

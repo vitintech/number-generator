@@ -10,6 +10,11 @@ function sortear() {
         return;
     }
 
+    if (quantidade > (ate - de + 1)) {
+        alert("A quantidade de numeros a serem sorteados é maior que o intervalo disponível.");
+        return;
+    }
+
     console.log(`Quantidade: ${quantidade}`);
     console.log(`de: ${de}`);
     console.log(`ate: ${ate}`);
